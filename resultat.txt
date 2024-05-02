@@ -121,31 +121,31 @@ Accidente con víctimas exclusivamente              13
 Name: nombre_ind_acciv, dtype: int64
 
 Variable: fecha_accidente
-2016-09-25    4
-2021-11-10    4
 2017-12-07    4
-2017-11-27    4
 2017-08-06    4
+2017-11-27    4
+2021-11-10    4
+2016-09-25    4
              ..
-2021-01-01    1
-2017-01-24    1
-2020-03-13    1
-2021-04-19    1
-2021-07-14    1
+2020-08-17    1
+2016-01-20    1
+2018-06-19    1
+2018-05-18    1
+2018-12-15    1
 Name: fecha_accidente, Length: 790, dtype: int64
 
 Variable: hora_accidente
 22:00    24
 22:30    18
+22:15    17
 23:30    17
 21:00    17
-20:30    17
          ..
-20:48     1
-1:20      1
-22:43     1
 22:22     1
-23:11     1
+10:38     1
+17:05     1
+21:22     1
+18:17     1
 Name: hora_accidente, Length: 266, dtype: int64
 
 Variable: nombre_mes
@@ -196,60 +196,60 @@ Teruel                28
 Cuenca                25
 Ciudad Real           25
 Pontevedra            24
-Badajoz               23
 Zaragoza              23
-Jaén                  21
+Badajoz               23
 Segovia               21
+Jaén                  21
 Salamanca             20
-Valladolid            19
 Guadalajara           19
+Valladolid            19
 Ávila                 18
 Madrid                16
 Córdoba               15
 Cantabria             15
-Granada               14
 Valencia/València     14
-Huelva                13
+Granada               14
 Albacete              13
-Toledo                11
+Huelva                13
 Cáceres               11
 Rioja, La             11
+Toledo                11
 Alicante/Alacant      10
 Murcia                 9
 Sevilla                8
 Málaga                 6
 Castellón/Castelló     6
-Cádiz                  4
 Almería                4
+Cádiz                  4
 Palmas, Las            2
 Name: nombre_provincia, dtype: int64
 
 Variable: nombre_municipio
-Vilalba           7
-Siero             6
-Lugo              5
-Córdoba           4
-Carballiño, O     4
-                 ..
-Paradas           1
-Tobarra           1
-Tafalla           1
-Gata de Gorgos    1
-Narón             1
+Vilalba                    7
+Siero                      6
+Lugo                       5
+Ávila                      4
+Córdoba                    4
+                          ..
+Mieres                     1
+Torrejón de Ardoz          1
+Gijón                      1
+Grado                      1
+Villarrubia de los Ojos    1
 Name: nombre_municipio, Length: 205, dtype: int64
 
 Variable: carretera
-N-234     22
-N-122     19
-N-120     17
-N-525     17
-A-6       12
-          ..
-A-3075     1
-CL-600     1
-AS-I       1
-A-33       1
-N-620      1
+N-234        22
+N-122        19
+N-525        17
+N-120        17
+A-6          12
+             ..
+A-3151        1
+CC-23.1       1
+EX-104        1
+LE-234        1
+LU-P-0707     1
 Name: carretera, Length: 598, dtype: int64
 
 Variable: nombre_sentido
@@ -279,8 +279,8 @@ Ciervo                     39
 Animal no identificado     32
 Zorro                      23
 Tejón                      12
-Vacuno                      9
 Felino                      9
+Vacuno                      9
 Otro animal                 9
 Ovino                       8
 Equino                      8
@@ -301,15 +301,15 @@ Name: nombre_tipo_animal_2f, dtype: int64
 Variable: geom
 POINT (-7.84093 42.21992)    2
 POINT (-3.56132 42.08382)    2
-POINT (-4.68533 42.56454)    1
-POINT (-6.18347 42.09864)    1
-POINT (-2.64175 41.60279)    1
+POINT (-2.55622 41.49565)    1
+POINT (-4.01709 41.13553)    1
+POINT (-1.69415 42.67151)    1
                             ..
-POINT (-4.90199 38.12611)    1
-POINT (-5.96021 42.39379)    1
-POINT (-3.12984 39.0608)     1
-POINT (-2.38243 41.75489)    1
-POINT (-8.19048 42.36378)    1
+POINT (-2.19277 39.73331)    1
+POINT (-7.84218 42.3696)     1
+POINT (-4.98811 37.82417)    1
+POINT (-1.67484 41.82975)    1
+POINT (-3.534 42.98683)      1
 Name: geom, Length: 998, dtype: int64
 
 Variable: nombre_dia_semana
@@ -338,8 +338,8 @@ Agua                                          24
 Monte arbolado de plantación                  18
 Monte arbolado adehesado                      12
 Monte con arbolado ralo                        7
-Monte con arbolado disperso                    4
 Monte con arbolado ralo de dehesa              4
+Monte con arbolado disperso                    4
 Monte con arbolado ralo de plantación          2
 Monte con arbolado disperso de plantación      1
 Name: uso_suelo, dtype: int64
@@ -349,7 +349,7 @@ Diario    695
 Finde     305
 Name: tipo_dia, dtype: int64
 
-Nombre total de morts per dia de la setmana:
+Nombre total de ferits sense hospitalització per dia de la setmana:
 nombre_dia_semana
 Domingo      3
 Jueves       0
@@ -359,3 +359,55 @@ Miércoles    1
 Sábado       2
 Viernes      1
 Name: total_hl30df, dtype: int64
+Matriu de correlació entre variables numèriques:
+                      id_num  ind_accda  ind_acciv  total_mu30df  total_hg30df  total_hl30df  ...   altitud  pendiente  taxonkey      tmed  imd_total  maxspeed
+id_num              1.000000   0.010196  -0.010196           NaN           NaN     -0.011932  ...  0.034734   0.056416  0.025334  0.076652   0.001162 -0.007617
+ind_accda           0.010196   1.000000  -1.000000           NaN           NaN     -0.970357  ... -0.003448  -0.035348  0.044832 -0.022844  -0.058471  0.013750
+ind_acciv          -0.010196  -1.000000   1.000000           NaN           NaN      0.970357  ...  0.003448   0.035348 -0.044832  0.022844   0.058471 -0.013750
+total_mu30df             NaN        NaN        NaN           NaN           NaN           NaN  ...       NaN        NaN       NaN       NaN        NaN       NaN
+total_hg30df             NaN        NaN        NaN           NaN           NaN           NaN  ...       NaN        NaN       NaN       NaN        NaN       NaN
+total_hl30df       -0.011932  -0.970357   0.970357           NaN           NaN      1.000000  ...  0.011750   0.035853 -0.030428  0.015810   0.054349 -0.010292
+mes_1f             -0.034396   0.005443  -0.005443           NaN           NaN      0.006474  ...  0.041699  -0.023161  0.058081  0.116487  -0.025912 -0.034997
+anyo                0.996997   0.006840  -0.006840           NaN           NaN     -0.008794  ...  0.034247   0.052259  0.022795  0.084918  -0.003016 -0.007813
+ccaa_1f             0.041424   0.021938  -0.021938           NaN           NaN     -0.019661  ... -0.117472   0.031357  0.159823 -0.039461   0.016378 -0.013407
+provincia_1f        0.060324   0.043470  -0.043470           NaN           NaN     -0.040698  ...  0.006900   0.054800  0.033378 -0.103989   0.053888  0.002373
+cod_municipio       0.023564  -0.031325   0.031325           NaN           NaN      0.023709  ... -0.300246   0.022852  0.162807  0.048553   0.309243  0.080859
+km                  0.032613   0.007749  -0.007749           NaN           NaN      0.007241  ...  0.021244   0.033250  0.080940 -0.039827  -0.011665  0.551880
+sentido_1f          0.015535  -0.001166   0.001166           NaN           NaN     -0.006837  ...  0.059782   0.030702 -0.022511 -0.028712   0.029515  0.004852
+tipo_via_3f        -0.031986   0.030022  -0.030022           NaN           NaN     -0.023842  ...  0.099288  -0.035978 -0.110965 -0.046032  -0.298772 -0.503858
+titularidad_via_2f  0.000388  -0.032526   0.032526           NaN           NaN      0.019881  ... -0.035648  -0.068303 -0.049464  0.056427  -0.017772 -0.690442
+tipo_animal_1f     -0.099873  -0.064688   0.064688           NaN           NaN      0.056948  ... -0.181454  -0.000025 -0.133735  0.035836   0.202609  0.037151
+tipo_animal_2f     -0.065970  -0.027481   0.027481           NaN           NaN      0.022304  ... -0.097595   0.017922 -0.429558  0.039268   0.165369  0.005107
+longitud            0.006238  -0.021909   0.021909           NaN           NaN      0.013540  ...  0.299080   0.022518 -0.126901  0.027867   0.027081  0.025522
+latitud             0.008008   0.092142  -0.092142           NaN           NaN     -0.077464  ...  0.079793  -0.034436  0.189428 -0.228358  -0.115206 -0.002717
+dia_semana         -0.006888   0.028585  -0.028585           NaN           NaN     -0.014357  ...  0.005971  -0.017946  0.080898  0.013023   0.001461  0.017840
+luna                0.006231   0.015735  -0.015735           NaN           NaN     -0.028921  ...  0.050918  -0.010457  0.032384  0.034588  -0.048473  0.002992
+prec                0.025616   0.029611  -0.029611           NaN           NaN     -0.028733  ...  0.028580  -0.008567  0.010743 -0.103579  -0.021964  0.024157
+tmin                0.078420  -0.010561   0.010561           NaN           NaN      0.003891  ... -0.226448  -0.034489 -0.012271  0.924386   0.137681  0.000513
+tmax                0.067530  -0.029925   0.029925           NaN           NaN      0.023325  ... -0.052573   0.010771 -0.082093  0.956481   0.027398  0.006347
+sol                -0.016587  -0.042103   0.042103           NaN           NaN      0.029102  ...  0.058375   0.079593 -0.046812  0.306737   0.044894  0.015538
+altitud             0.034734  -0.003448   0.003448           NaN           NaN      0.011750  ...  1.000000   0.102901 -0.144032 -0.135723  -0.195323  0.013919
+pendiente           0.056416  -0.035348   0.035348           NaN           NaN      0.035853  ...  0.102901   1.000000 -0.008991 -0.009384   0.020161  0.077305
+taxonkey            0.025334   0.044832  -0.044832           NaN           NaN     -0.030428  ... -0.144032  -0.008991  1.000000 -0.055421   0.123088  0.133984
+tmed                0.076652  -0.022844   0.022844           NaN           NaN      0.015810  ... -0.135723  -0.009384 -0.055421  1.000000   0.079777  0.004051
+imd_total           0.001162  -0.058471   0.058471           NaN           NaN      0.054349  ... -0.195323   0.020161  0.123088  0.079777   1.000000  0.036689
+maxspeed           -0.007617   0.013750  -0.013750           NaN           NaN     -0.010292  ...  0.013919   0.077305  0.133984  0.004051   0.036689  1.000000
+
+[31 rows x 31 columns]
+Top 10 províncies amb més accidents i el seu animal predominant:
+Provínca: Burgos, Animal predominant: Corzo
+Provínca: León, Animal predominant: Corzo
+Provínca: Lugo, Animal predominant: Jabalí
+Provínca: Soria, Animal predominant: Corzo
+Provínca: Ourense, Animal predominant: Jabalí
+Provínca: Huesca, Animal predominant: Jabalí
+Provínca: Asturias, Animal predominant: Jabalí
+Provínca: Coruña, A, Animal predominant: Jabalí
+Provínca: Palencia, Animal predominant: Corzo
+Provínca: Zamora, Animal predominant: Jabalí
+
+Top 10 províncies de Galícia amb més accidents i el seu animal predominant:
+Provincia: Lugo, Animal predominant: Jabalí
+Provincia: Ourense, Animal predominant: Jabalí
+Provincia: Coruña, A, Animal predominant: Jabalí
+Provincia: Pontevedra, Animal predominant: Jabalí
