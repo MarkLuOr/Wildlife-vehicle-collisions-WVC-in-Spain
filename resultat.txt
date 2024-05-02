@@ -1,0 +1,361 @@
+         id_num  ind_accda                               nombre_ind_accd  ind_acciv  ... tipo_dia   tmed  imd_total  maxspeed
+0  201844072700          1  Accidente de daños materiales exclusivamente          0  ...    Finde   7.55     2530.0        90
+1  201609002053          1  Accidente de daños materiales exclusivamente          0  ...   Diario  20.25     4453.0       120
+2  202133154126          1  Accidente de daños materiales exclusivamente          0  ...   Diario  15.35    20052.0       100
+3  202144161163          1  Accidente de daños materiales exclusivamente          0  ...    Finde  19.85    10837.0        80
+4  201911081594          1  Accidente de daños materiales exclusivamente          0  ...   Diario  22.95    17564.0        80
+
+[5 rows x 50 columns]
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 1000 entries, 0 to 999
+Data columns (total 50 columns):
+ #   Column                  Non-Null Count  Dtype  
+---  ------                  --------------  -----  
+ 0   id_num                  1000 non-null   int64  
+ 1   ind_accda               1000 non-null   int64  
+ 2   nombre_ind_accd         1000 non-null   object 
+ 3   ind_acciv               1000 non-null   int64  
+ 4   nombre_ind_acciv        1000 non-null   object 
+ 5   total_mu30df            1000 non-null   int64  
+ 6   total_hg30df            1000 non-null   int64  
+ 7   total_hl30df            1000 non-null   int64  
+ 8   fecha_accidente         1000 non-null   object 
+ 9   hora_accidente          1000 non-null   object 
+ 10  mes_1f                  1000 non-null   int64  
+ 11  nombre_mes              1000 non-null   object 
+ 12  anyo                    1000 non-null   int64  
+ 13  ccaa_1f                 1000 non-null   int64  
+ 14  nombre_ccaa             1000 non-null   object 
+ 15  provincia_1f            1000 non-null   int64  
+ 16  nombre_provincia        1000 non-null   object 
+ 17  cod_municipio           1000 non-null   int64  
+ 18  nombre_municipio        297 non-null    object 
+ 19  carretera               1000 non-null   object 
+ 20  km                      1000 non-null   float64
+ 21  sentido_1f              1000 non-null   int64  
+ 22  nombre_sentido          1000 non-null   object 
+ 23  tipo_via_3f             1000 non-null   int64  
+ 24  nombre_tipo_via         1000 non-null   object 
+ 25  titularidad_via_2f      1000 non-null   int64  
+ 26  nombre_titularidad_via  1000 non-null   object 
+ 27  tipo_animal_1f          1000 non-null   int64  
+ 28  nombre_tipo_animal_1f   1000 non-null   object 
+ 29  tipo_animal_2f          1000 non-null   int64  
+ 30  nombre_tipo_animal_2f   1000 non-null   object 
+ 31  longitud                1000 non-null   float64
+ 32  latitud                 1000 non-null   float64
+ 33  geom                    1000 non-null   object 
+ 34  dia_semana              1000 non-null   int64  
+ 35  nombre_dia_semana       1000 non-null   object 
+ 36  parte_dia               1000 non-null   object 
+ 37  luna                    609 non-null    float64
+ 38  prec                    970 non-null    float64
+ 39  tmin                    970 non-null    float64
+ 40  tmax                    970 non-null    float64
+ 41  sol                     970 non-null    float64
+ 42  uso_suelo               1000 non-null   object 
+ 43  altitud                 987 non-null    float64
+ 44  pendiente               1000 non-null   float64
+ 45  taxonkey                824 non-null    float64
+ 46  tipo_dia                1000 non-null   object 
+ 47  tmed                    970 non-null    float64
+ 48  imd_total               1000 non-null   float64
+ 49  maxspeed                1000 non-null   int64  
+dtypes: float64(13), int64(18), object(19)
+memory usage: 390.8+ KB
+None
+Nombre de registres: 1000
+Nombre de variables: 50
+             id_num    ind_accda    ind_acciv  total_mu30df  total_hg30df  total_hl30df       mes_1f         anyo      ccaa_1f  provincia_1f
+count  1.000000e+03  1000.000000  1000.000000        1000.0        1000.0   1000.000000  1000.000000  1000.000000  1000.000000   1000.000000
+mean   2.018829e+11     0.987000     0.013000           0.0           0.0      0.014000     7.086000  2018.563000     7.945000     26.539000
+std    1.706543e+08     0.113331     0.113331           0.0           0.0      0.125777     3.437211     1.703212     4.140908     13.208594
+min    2.016030e+11     0.000000     0.000000           0.0           0.0      0.000000     1.000000  2016.000000     1.000000      2.000000
+25%    2.017310e+11     1.000000     0.000000           0.0           0.0      0.000000     4.000000  2017.000000     7.000000     15.000000
+50%    2.019091e+11     1.000000     0.000000           0.0           0.0      0.000000     7.000000  2019.000000     8.000000     27.000000
+75%    2.020311e+11     1.000000     0.000000           0.0           0.0      0.000000    10.000000  2020.000000    12.000000     36.000000
+max    2.021502e+11     1.000000     1.000000           0.0           0.0      2.000000    12.000000  2021.000000    17.000000     50.000000
+       cod_municipio           km   sentido_1f  tipo_via_3f  titularidad_via_2f  tipo_animal_1f  tipo_animal_2f     longitud      latitud   dia_semana
+count    1000.000000  1000.000000  1000.000000  1000.000000         1000.000000     1000.000000     1000.000000  1000.000000  1000.000000  1000.000000
+mean     7455.478000    93.091081     1.533000     1.860000            1.807000        9.008000        1.130000    -4.394195    41.315725     4.051000
+std     13138.665648   145.593815     0.537773     0.347161            0.681333        5.993652        0.421043     2.422416     1.844537     2.058795
+min         0.000000     0.100000     1.000000     1.000000            1.000000        0.000000        0.000000   -13.872740    28.456550     1.000000
+25%         0.000000     7.297500     1.000000     2.000000            1.000000        5.000000        1.000000    -6.167665    40.418172     2.000000
+50%         0.000000    21.550000     2.000000     2.000000            2.000000        8.000000        1.000000    -4.289750    41.929895     4.000000
+75%     13048.250000   100.750000     2.000000     2.000000            2.000000        8.000000        1.000000    -2.708808    42.610008     6.000000
+max     50298.000000   999.500000     4.000000     2.000000            5.000000       26.000000        2.000000     0.631860    43.731540     7.000000
+             luna        prec        tmin        tmax         sol      altitud    pendiente      taxonkey        tmed      imd_total
+count  609.000000  970.000000  970.000000  970.000000  970.000000   987.000000  1000.000000  8.240000e+02  970.000000    1000.000000
+mean    50.973727    1.480206    7.781340   19.920825    5.059588   685.725898 -1992.963062  6.093773e+06   13.851082   10600.461000
+std     35.944117    5.829136    6.151744    8.042053    4.628571   429.025626  4005.028829  1.765947e+06    6.689326   13181.117527
+min      0.000000    0.000000  -11.800000    1.800000    0.000000  -999.000000 -9999.000000  2.433875e+06   -3.200000      56.000000
+25%     14.000000    0.000000    3.100000   13.800000    0.000000   426.240000     0.610875  5.220126e+06    8.800000    2225.000000
+50%     52.000000    0.000000    7.500000   19.400000    5.000000   733.993000     3.423250  5.220126e+06   13.500000    6689.500000
+75%     88.000000    0.400000   12.200000   25.700000    9.275000   944.589000     9.980375  7.705930e+06   18.750000   14911.000000
+max    100.000000  135.800000   26.000000   43.800000   14.100000  2341.796000    44.991500  7.705930e+06   34.100000  171452.000000
+          maxspeed
+count  1000.000000
+mean     95.240000
+std      18.062909
+min      30.000000
+25%      80.000000
+50%      90.000000
+75%     120.000000
+max     120.000000
+Empty DataFrame
+Columns: []
+Index: [count, mean, std, min, 25%, 50%, 75%, max]
+Nombre de variables numèriques: 31
+Nom de les variables numèriques: ['id_num', 'ind_accda', 'ind_acciv', 'total_mu30df', 'total_hg30df', 'total_hl30df', 'mes_1f', 'anyo', 'ccaa_1f', 'provincia_1f', 'cod_municipio', 'km', 'sentido_1f', 'tipo_via_3f', 'titularidad_via_2f', 'tipo_animal_1f', 'tipo_animal_2f', 'longitud', 'latitud', 'dia_semana', 'luna', 'prec', 'tmin', 'tmax', 'sol', 'altitud', 'pendiente', 'taxonkey', 'tmed', 'imd_total', 'maxspeed']
+
+Nombre de variables categòriques: 19
+Nom de variables categòriques: ['nombre_ind_accd', 'nombre_ind_acciv', 'fecha_accidente', 'hora_accidente', 'nombre_mes', 'nombre_ccaa', 'nombre_provincia', 'nombre_municipio', 'carretera', 'nombre_sentido', 'nombre_tipo_via', 'nombre_titularidad_via', 'nombre_tipo_animal_1f', 'nombre_tipo_animal_2f', 'geom', 'nombre_dia_semana', 'parte_dia', 'uso_suelo', 'tipo_dia']
+Variable: nombre_ind_accd
+Accidente de daños materiales exclusivamente    987
+No es un accidente de daños exclusivamente       13
+Name: nombre_ind_accd, dtype: int64
+
+Variable: nombre_ind_acciv
+No es un accidente con víctimas exclusivamente    987
+Accidente con víctimas exclusivamente              13
+Name: nombre_ind_acciv, dtype: int64
+
+Variable: fecha_accidente
+2016-09-25    4
+2021-11-10    4
+2017-12-07    4
+2017-11-27    4
+2017-08-06    4
+             ..
+2021-01-01    1
+2017-01-24    1
+2020-03-13    1
+2021-04-19    1
+2021-07-14    1
+Name: fecha_accidente, Length: 790, dtype: int64
+
+Variable: hora_accidente
+22:00    24
+22:30    18
+23:30    17
+21:00    17
+20:30    17
+         ..
+20:48     1
+1:20      1
+22:43     1
+22:22     1
+23:11     1
+Name: hora_accidente, Length: 266, dtype: int64
+
+Variable: nombre_mes
+Noviembre     125
+Octubre       116
+Diciembre      91
+Abril          87
+Agosto         85
+Mayo           84
+Septiembre     78
+Junio          74
+Julio          69
+Febrero        65
+Enero          63
+Marzo          63
+Name: nombre_mes, dtype: int64
+
+Variable: nombre_ccaa
+Castilla y León                365
+Galicia                        169
+Aragón                          96
+Castilla-La Mancha              93
+Andalucía                       85
+Asturias, Principado de         43
+Extremadura                     34
+Navarra, Comunidad Foral de     32
+Comunitat Valenciana            30
+Madrid, Comunidad de            16
+Cantabria                       15
+Rioja, La                       11
+Murcia, Región de                9
+Canarias                         2
+Name: nombre_ccaa, dtype: int64
+
+Variable: nombre_provincia
+Burgos                98
+León                  66
+Lugo                  59
+Soria                 54
+Ourense               48
+Huesca                45
+Asturias              43
+Coruña, A             38
+Palencia              35
+Zamora                34
+Navarra               32
+Teruel                28
+Cuenca                25
+Ciudad Real           25
+Pontevedra            24
+Badajoz               23
+Zaragoza              23
+Jaén                  21
+Segovia               21
+Salamanca             20
+Valladolid            19
+Guadalajara           19
+Ávila                 18
+Madrid                16
+Córdoba               15
+Cantabria             15
+Granada               14
+Valencia/València     14
+Huelva                13
+Albacete              13
+Toledo                11
+Cáceres               11
+Rioja, La             11
+Alicante/Alacant      10
+Murcia                 9
+Sevilla                8
+Málaga                 6
+Castellón/Castelló     6
+Cádiz                  4
+Almería                4
+Palmas, Las            2
+Name: nombre_provincia, dtype: int64
+
+Variable: nombre_municipio
+Vilalba           7
+Siero             6
+Lugo              5
+Córdoba           4
+Carballiño, O     4
+                 ..
+Paradas           1
+Tobarra           1
+Tafalla           1
+Gata de Gorgos    1
+Narón             1
+Name: nombre_municipio, Length: 205, dtype: int64
+
+Variable: carretera
+N-234     22
+N-122     19
+N-120     17
+N-525     17
+A-6       12
+          ..
+A-3075     1
+CL-600     1
+AS-I       1
+A-33       1
+N-620      1
+Name: carretera, Length: 598, dtype: int64
+
+Variable: nombre_sentido
+Descendente     496
+Ascendente      486
+Ambos            17
+Se desconoce      1
+Name: nombre_sentido, dtype: int64
+
+Variable: nombre_tipo_via
+Resto vías interurbanas    860
+Autopista y autovía        140
+Name: nombre_tipo_via, dtype: int64
+
+Variable: nombre_titularidad_via
+Autonómica                     507
+Estatal                        344
+Provincial, Cabildo/Consell    148
+Otra                             1
+Name: nombre_titularidad_via, dtype: int64
+
+Variable: nombre_tipo_animal_1f
+Jabalí                    397
+Corzo                     306
+Canino                    128
+Ciervo                     39
+Animal no identificado     32
+Zorro                      23
+Tejón                      12
+Vacuno                      9
+Felino                      9
+Otro animal                 9
+Ovino                       8
+Equino                      8
+Ave                         7
+Cabra montés                6
+Liebre                      3
+Conejo                      2
+Gamo                        1
+Lobo                        1
+Name: nombre_tipo_animal_1f, dtype: int64
+
+Variable: nombre_tipo_animal_2f
+Silvestre                 806
+Doméstico                 162
+Animal no identificado     32
+Name: nombre_tipo_animal_2f, dtype: int64
+
+Variable: geom
+POINT (-7.84093 42.21992)    2
+POINT (-3.56132 42.08382)    2
+POINT (-4.68533 42.56454)    1
+POINT (-6.18347 42.09864)    1
+POINT (-2.64175 41.60279)    1
+                            ..
+POINT (-4.90199 38.12611)    1
+POINT (-5.96021 42.39379)    1
+POINT (-3.12984 39.0608)     1
+POINT (-2.38243 41.75489)    1
+POINT (-8.19048 42.36378)    1
+Name: geom, Length: 998, dtype: int64
+
+Variable: nombre_dia_semana
+Domingo      161
+Lunes        156
+Sábado       144
+Viernes      142
+Jueves       139
+Martes       136
+Miércoles    122
+Name: nombre_dia_semana, dtype: int64
+
+Variable: parte_dia
+Noche        609
+Día          209
+Anochecer    117
+Amanecer      65
+Name: parte_dia, dtype: int64
+
+Variable: uso_suelo
+Cultivos                                     703
+Monte arbolado                                95
+Monte desarbolado                             87
+Artificial                                    43
+Agua                                          24
+Monte arbolado de plantación                  18
+Monte arbolado adehesado                      12
+Monte con arbolado ralo                        7
+Monte con arbolado disperso                    4
+Monte con arbolado ralo de dehesa              4
+Monte con arbolado ralo de plantación          2
+Monte con arbolado disperso de plantación      1
+Name: uso_suelo, dtype: int64
+
+Variable: tipo_dia
+Diario    695
+Finde     305
+Name: tipo_dia, dtype: int64
+
+Nombre total de morts per dia de la setmana:
+nombre_dia_semana
+Domingo      3
+Jueves       0
+Lunes        2
+Martes       5
+Miércoles    1
+Sábado       2
+Viernes      1
+Name: total_hl30df, dtype: int64
