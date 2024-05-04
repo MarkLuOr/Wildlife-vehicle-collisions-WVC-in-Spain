@@ -16,6 +16,16 @@ print(data.head())
 # Informació general del dataset 
 print(data.info())
 
+# Variables amb valors Nan
+variables_nan = data.columns[data.isnull().any()].tolist()
+
+# Total valors faltants per variables
+totals_nuls_per_variable = data[variables_nan].isnull().sum()
+
+print("Variables amb valors Nulls:")
+for variable in variables_nan:
+    print(f"{variable}: {totals_nuls_per_variable[variable]} valors nulls")
+
 
 ## Quantiat de registres i de variables
 # Nombre de registres al conjunt de dades 
@@ -111,12 +121,29 @@ plt.savefig("barres_apilades_categòriques.png")
 plt.close()
 
 
-
-## Combinació de dades categòriques y numèriques:
+## Combinació de dades categòriques i numèriques:
 # El nombre total de ferits sense hospitalització per accident per dia de la setmana
 ferits_sense_hospitalitzacio_per_dia_setmana = data.groupby('nombre_dia_semana')['total_hl30df'].sum()
 print("Nombre total de ferits sense hospitalització per dia de la setmana:")
 print(ferits_sense_hospitalitzacio_per_dia_setmana)
+
+# Total de ferits sense hospitalització per accident per tipus d'animal
+total_ferits_animal = data.groupby('nombre_tipo_animal_1f')['total_hl30df'].sum()
+print("Total de ferits sense hospitalització per tipus d'animal:")
+print(total_ferits_animal)
+
+# Promig de la intensitat mitja diària de tràfic per tipus de carretera
+promig_trafic_tipus_carretera = data.groupby('nombre_tipo_via')['imd_total'].mean()
+print("Promig de la intensitat mitja diària de tràfic per tipus de carretera:")
+print(promig_trafic_tipus_carretera)
+
+# Combinació de variables categòriques: part del dia, mes i província
+total_accidents_dia_mes_provincia = data.groupby(['parte_dia', 'nombre_mes', 'nombre_provincia'])['id_num'].count()
+
+# Ordenar els resultats de manera descendent i obtenir el top 10
+top_10_accidents = total_accidents_dia_mes_provincia.sort_values(ascending=False).head(10)
+print("Top 10 de combinacions de part del dia, mes i província amb més accidents:")
+print(top_10_accidents)
 
 
 ## Anàlisis de la correlació

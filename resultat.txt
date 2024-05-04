@@ -64,6 +64,16 @@ Data columns (total 50 columns):
 dtypes: float64(13), int64(18), object(19)
 memory usage: 390.8+ KB
 None
+Variables amb valors Nulls:
+nombre_municipio: 703 valors nulls
+luna: 391 valors nulls
+prec: 30 valors nulls
+tmin: 30 valors nulls
+tmax: 30 valors nulls
+sol: 30 valors nulls
+altitud: 13 valors nulls
+taxonkey: 176 valors nulls
+tmed: 30 valors nulls
 Nombre de registres: 1000
 Nombre de variables: 50
              id_num    ind_accda    ind_acciv  total_mu30df  total_hg30df  total_hl30df       mes_1f         anyo      ccaa_1f  provincia_1f
@@ -121,31 +131,31 @@ Accidente con víctimas exclusivamente              13
 Name: nombre_ind_acciv, dtype: int64
 
 Variable: fecha_accidente
-2017-12-07    4
-2017-08-06    4
 2017-11-27    4
-2021-11-10    4
+2017-12-07    4
 2016-09-25    4
+2017-08-06    4
+2021-11-10    4
              ..
-2020-08-17    1
-2016-01-20    1
-2018-06-19    1
-2018-05-18    1
-2018-12-15    1
+2021-02-07    1
+2017-01-04    1
+2017-02-17    1
+2016-11-16    1
+2020-06-11    1
 Name: fecha_accidente, Length: 790, dtype: int64
 
 Variable: hora_accidente
 22:00    24
 22:30    18
-22:15    17
+20:30    17
 23:30    17
-21:00    17
+22:15    17
          ..
-22:22     1
-10:38     1
-17:05     1
-21:22     1
-18:17     1
+13:55     1
+13:45     1
+0:36      1
+23:35     1
+14:15     1
 Name: hora_accidente, Length: 266, dtype: int64
 
 Variable: nombre_mes
@@ -159,8 +169,8 @@ Septiembre     78
 Junio          74
 Julio          69
 Febrero        65
-Enero          63
 Marzo          63
+Enero          63
 Name: nombre_mes, dtype: int64
 
 Variable: nombre_ccaa
@@ -205,15 +215,15 @@ Guadalajara           19
 Valladolid            19
 Ávila                 18
 Madrid                16
-Córdoba               15
 Cantabria             15
+Córdoba               15
 Valencia/València     14
 Granada               14
 Albacete              13
 Huelva                13
-Cáceres               11
 Rioja, La             11
 Toledo                11
+Cáceres               11
 Alicante/Alacant      10
 Murcia                 9
 Sevilla                8
@@ -225,31 +235,31 @@ Palmas, Las            2
 Name: nombre_provincia, dtype: int64
 
 Variable: nombre_municipio
-Vilalba                    7
-Siero                      6
-Lugo                       5
-Ávila                      4
-Córdoba                    4
-                          ..
-Mieres                     1
-Torrejón de Ardoz          1
-Gijón                      1
-Grado                      1
-Villarrubia de los Ojos    1
+Vilalba                   7
+Siero                     6
+Lugo                      5
+Barco de Valdeorras, O    4
+Ávila                     4
+                         ..
+Ponteceso                 1
+Cercedilla                1
+Baeza                     1
+Aracena                   1
+Alcañiz                   1
 Name: nombre_municipio, Length: 205, dtype: int64
 
 Variable: carretera
 N-234        22
 N-122        19
-N-525        17
 N-120        17
+N-525        17
 A-6          12
              ..
-A-3151        1
-CC-23.1       1
-EX-104        1
-LE-234        1
-LU-P-0707     1
+AC-564        1
+SG-V-2412     1
+ZA-321        1
+LU-12         1
+A-394         1
 Name: carretera, Length: 598, dtype: int64
 
 Variable: nombre_sentido
@@ -279,17 +289,17 @@ Ciervo                     39
 Animal no identificado     32
 Zorro                      23
 Tejón                      12
-Felino                      9
 Vacuno                      9
+Felino                      9
 Otro animal                 9
-Ovino                       8
 Equino                      8
+Ovino                       8
 Ave                         7
 Cabra montés                6
 Liebre                      3
 Conejo                      2
-Gamo                        1
 Lobo                        1
+Gamo                        1
 Name: nombre_tipo_animal_1f, dtype: int64
 
 Variable: nombre_tipo_animal_2f
@@ -301,15 +311,15 @@ Name: nombre_tipo_animal_2f, dtype: int64
 Variable: geom
 POINT (-7.84093 42.21992)    2
 POINT (-3.56132 42.08382)    2
-POINT (-2.55622 41.49565)    1
-POINT (-4.01709 41.13553)    1
-POINT (-1.69415 42.67151)    1
+POINT (-5.74317 41.25504)    1
+POINT (-2.64175 41.60279)    1
+POINT (-3.06032 40.86898)    1
                             ..
-POINT (-2.19277 39.73331)    1
-POINT (-7.84218 42.3696)     1
-POINT (-4.98811 37.82417)    1
-POINT (-1.67484 41.82975)    1
-POINT (-3.534 42.98683)      1
+POINT (-5.25401 42.84108)    1
+POINT (-0.56021 39.37447)    1
+POINT (-3.36155 39.16189)    1
+POINT (0.14016 40.11445)     1
+POINT (-3.54873 42.39937)    1
 Name: geom, Length: 998, dtype: int64
 
 Variable: nombre_dia_semana
@@ -338,8 +348,8 @@ Agua                                          24
 Monte arbolado de plantación                  18
 Monte arbolado adehesado                      12
 Monte con arbolado ralo                        7
-Monte con arbolado ralo de dehesa              4
 Monte con arbolado disperso                    4
+Monte con arbolado ralo de dehesa              4
 Monte con arbolado ralo de plantación          2
 Monte con arbolado disperso de plantación      1
 Name: uso_suelo, dtype: int64
@@ -359,6 +369,45 @@ Miércoles    1
 Sábado       2
 Viernes      1
 Name: total_hl30df, dtype: int64
+Total de ferits sense hospitalització per tipus d'animal:
+nombre_tipo_animal_1f
+Animal no identificado    1
+Ave                       0
+Cabra montés              0
+Canino                    2
+Ciervo                    0
+Conejo                    0
+Corzo                     2
+Equino                    1
+Felino                    0
+Gamo                      0
+Jabalí                    5
+Liebre                    0
+Lobo                      0
+Otro animal               0
+Ovino                     1
+Tejón                     1
+Vacuno                    0
+Zorro                     1
+Name: total_hl30df, dtype: int64
+Promig de la intensitat mitja diària de tràfic per tipus de carretera:
+nombre_tipo_via
+Autopista y autovía        20356.207143
+Resto vías interurbanas     9012.316279
+Name: imd_total, dtype: float64
+Top 10 de combinacions de part del dia, mes i província amb més accidents:
+parte_dia  nombre_mes  nombre_provincia
+Noche      Septiembre  Asturias            8
+           Diciembre   Ourense             7
+           Noviembre   Burgos              7
+                       Huesca              7
+           Agosto      Burgos              7
+           Octubre     Asturias            7
+           Diciembre   Huesca              6
+           Noviembre   Ourense             6
+                       Lugo                6
+           Marzo       Asturias            6
+Name: id_num, dtype: int64
 Matriu de correlació entre variables numèriques:
                       id_num  ind_accda  ind_acciv  total_mu30df  total_hg30df  total_hl30df  ...   altitud  pendiente  taxonkey      tmed  imd_total  maxspeed
 id_num              1.000000   0.010196  -0.010196           NaN           NaN     -0.011932  ...  0.034734   0.056416  0.025334  0.076652   0.001162 -0.007617
