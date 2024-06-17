@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Presentacio_visualitzacio_partII.html</title>
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css">
+    <link rel="stylesheet" href="dist/theme/black.css">
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css">
+    <style>
+        h1 {
+            font-size: 5.5em;
+            color: blue;
+        }
+        h2 {
+            font-size: 2em;
+        }
+        h3 {
+            font-size: 4em;
+        }
+        h4 {
+            font-weight: normal;
+        }
+        h5 {
+            font-size: 1.5em;
+            color: green;
+        }
+        .plotly-graph iframe {
+            width: 100%;
+            height: 500px;
+            border: none;
+        }
+        .logo-container {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+        .logo-container img {
+            width: 250px;
+        }
+    </style>
+</head>
+<body>
+    <div class="logo-container">
+        <img src="https://cdn.freelogovectors.net/svg04/uoc-logo.svg" alt="UOC Logo">
+    </div>
+    <div class="reveal">
+        <div class="slides">
+            <!-- Título de la presentación -->
+            <section data-background-color="#ffffff">
+                <h1>Visualització de dades</h1>
+                <h3>Part II: projecte de visualització</h3>
+                <h5>Autor: Marc Luengo Orús</h5>
+            </section>
+            <!-- Gráfico 1: Distribució d'accidents per dia de la setmana -->
+            <section data-background-color="#ffffff">
+                <h2>1. Distribució d'accidents per dia de la setmana</h2>
+                <h4>• <strong>Objectiu:</strong> Analitzar en quins dies de la setmana es produeixen més accidents.</h4>
+                <h4>• <strong>Visualització:</strong> Gràfic de barres interactiu mostrant la quantitat d'accidents per dia de la setmana.</h4>
+                <div class="plotly-graph">
+                    <iframe src="accidents_by_day_interactiu.html"></iframe>
+                </div>
+            </section>
+            <!-- Gráfico 2: Relació entre el tipus de via i la quantitat d'accidents -->
+            <section data-background-color="#ffffff">
+                <h2>2. Relació entre el tipus de via i la quantitat d'accidents</h2>
+                <h4>• <strong>Objectiu:</strong> Verificar si uns certs tipus de vies tenen més accidents que uns altres.</h4>
+                <h4>• <strong>Visualització:</strong> Gràfic de barres interactiu mostrant la quantitat d'accidents per tipus de via.</h4>
+                <div class="plotly-graph">
+                    <iframe src="accidents_by_via_interactiu.html"></iframe>
+                </div>
+            </section>
+            <!-- Gráfico 3: Mapa interactiu d'accidents per províncies i tipus d'animals -->
+            <section data-background-color="#ffffff">
+                <h2>3. Mapa interactiu d'accidents per províncies i tipus d'animals</h2>
+                <h4>• <strong>Objectiu:</strong> Identificar les províncies amb més accidents i el tipus d'animal predominant.</h4>
+                <h4>• <strong>Visualització:</strong> Mapa interactiu que mostri la ubicació dels accidents i el tipus d'animal involucrat.</h4>
+                <div class="plotly-graph">
+                    <iframe src="mapa_accidentes.html"></iframe>
+                </div>
+            </section>
+            <!-- Gráfico 4: Gràfic de dispersió interactiu i mapa de calor per a correlació de condicions climàtiques -->
+            <section data-background-color="#ffffff">
+                <h2>4. Relació entre condicions climàtiques i accidents</h2>
+                <h4>• <strong>Objectiu:</strong> Entendre com les variables climàtiques afecten la quantitat d'accidents.</h4>
+                <h4>• <strong>Visualització:</strong> Gràfic de dispersió per visualitzar les correlacions.</h4>
+                <div class="plotly-graph">
+                    <iframe src="gràfic_dispersió_interactiu.html"></iframe>
+                </div>
+            </section>
+            <section data-background-color="#ffffff">
+                <h2>5. Mapa de calor de la correlació entre variables numèriques</h2>
+                <h4>• <strong>Objectiu:</strong> Entendre com les variables climàtiques afecten la quantitat d'accidents.</h4>
+                <h4>• <strong>Visualització:</strong> Mapa de calor per visualitzar les correlacions.</h4>
+                <div class="plotly-graph">
+                    <iframe src="mapa_calor_interactiu.html"></iframe>
+                </div>
+            </section>
+            <!-- Gráfico 5: Gràfic de línies interactiu per a freqüència d'accidents per mes i part del dia -->
+            <section data-background-color="#ffffff">
+                <h2>6. Freqüència d'accidents per mes i part del dia</h2>
+                <h4>• <strong>Objectiu:</strong> Determinar si hi ha una estacionalitat en els accidents i en quina part del dia són més freqüents.</h4>
+                <h4>• <strong>Visualització:</strong> Gràfic de línies interactiu que mostri la freqüència d'accidents per mes i part del dia.</h4>
+                <div class="plotly-graph">
+                    <iframe src="gràfic_línies_interactiu.html"></iframe>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+        Reveal.initialize({
+            hash: true,
+            plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+            navigationMode: 'linear'
+        });
+    </script>
+</body>
+</html>

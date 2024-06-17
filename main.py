@@ -2,6 +2,9 @@ import pandas as pd
 import sys
 import matplotlib.pyplot as plt
 import seaborn as sns
+import plotly.express as px
+import plotly.graph_objects as go
+import folium
 
 
 # Es guarden les sortides en un arxiu de text
@@ -187,6 +190,98 @@ for provincia in top_10_provincies_galicia_accidents:
 print("\nTop 10 províncies de Galícia amb més accidents i el seu animal predominant:")
 for provincia, animal in animal_predominant_galicia.items():
     print(f"Provincia: {provincia}, Animal predominant: {animal}")
+
+
+### Part dels gràfics interactius
+
+## 1. Gràfic interactiu de barres per dia de la setmana:
+
+# Obtenir dades d'accidents per dia de la setmana
+accidents_by_day = data['nombre_dia_semana'].value_counts().reset_index()
+accidents_by_day.columns = ['nombre_dia_semana', 'count']
+
+# Crear gràfic interactiu de barres
+fig = px.bar(accidents_by_day, x='nombre_dia_semana', y='count', 
+             title="Distribució d'accidents per dia de la setmana",
+             labels={'nombre_dia_semana': 'Día de la semana', 'count': 'Cantidad de accidentes'},
+             color='nombre_dia_semana')  
+fig.write_html("accidents_by_day_interactiu.html")
+
+## 2.Gràfic interactiu de barres per tipus de via:
+
+# Obtenir dades d'accidents per tipus de via
+accidents_by_via = data['nombre_tipo_via'].value_counts().reset_index()
+accidents_by_via.columns = ['nombre_tipo_via', 'count']
+
+# Crear gráfico interactivo de barras
+fig = px.bar(accidents_by_via, x='nombre_tipo_via', y='count', 
+             title="Relació entre el tipus de via i la quantitat d'accidents",
+             labels={'nombre_tipo_via': 'Tipo de vía', 'count': 'Cantidad de accidentes'},
+             color='nombre_tipo_via') 
+fig.write_html("accidents_by_via_interactiu.html")
+
+## 3. Mapa interactiu d'accidents per províncies i tipus d'animals:
+
+# Crear mapa centrat en Espanya
+m = folium.Map(location=[40.4165, -3.70256], zoom_start=6)
+
+# Agregar marcadors per a cada accident amb informació del tipus d'animal
+for index, row in data.iterrows():
+    folium.Marker([row['latitud'], row['longitud']],
+                  popup=f"Provincia: {row['nombre_provincia']}<br>Tipo de animal: {row['nombre_tipo_animal_1f']}"
+                 ).add_to(m)
+
+# Mostrar el mapa interactiu
+m.save('mapa_accidentes.html')  
+
+## 4. Gràfic de dispersió interactiu i mapa de calor per a correlació de condicions climàtiques:
+# Crear gràfic de dispersió interactiu
+fig = go.Figure(data=go.Scatter(
+    x=data['tmed'],
+    y=data['imd_total'],
+    mode='markers',
+    marker=dict(color=data['altitud'], size=data['maxspeed'], showscale=True)
+))
+
+fig.update_layout(
+    title='Relació entre condicions climàtiques i accidents',
+    xaxis_title='Temperatura media (ºC)',
+    yaxis_title='Intensidad media diaria de tráfico',
+    coloraxis_colorbar=dict(title='Altitud'),
+    showlegend=False
+)
+
+fig.write_html("gràfic_dispersió_interactiu.html")
+
+
+# Mapa de calor interactiu de la matriu de correlació
+# Anàlisis de la correlació
+# Matriu de correlació entre variables numèriques
+correlation_matrix = data.corr()
+fig = go.Figure(data=go.Heatmap(
+    z=correlation_matrix.values,
+    x=correlation_matrix.columns,
+    y=correlation_matrix.index,
+    colorscale='Viridis'
+))
+
+fig.update_layout(
+    title='Mapa de calor de la correlació entre variables numèriques',
+    xaxis_title='Variables',
+    yaxis_title='Variables',
+)
+
+fig.write_html("mapa_calor_interactiu.html")
+
+## 5. Gràfic de línies interactiu per a freqüència d'accidents per mes i part del dia:
+# Crear DataFrame amb freqüència d'accidents per mes i part del dia
+accidents_by_month_daypart = data.groupby(['nombre_mes', 'parte_dia'])['id_num'].count().reset_index()
+
+# Gràfic de línies interactiu
+fig = px.line(accidents_by_month_daypart, x='nombre_mes', y='id_num', color='parte_dia',
+              title="Freqüència d'accidents per mes i part del dia",
+              labels={'nombre_mes': 'Mes', 'id_num': 'Cantidad de accidentes', 'parte_dia': 'Parte del día'})
+fig.write_html("gràfic_línies_interactiu.html")
 
 
 # Restauració del output estàndar a consola 
